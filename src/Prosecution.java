@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -16,10 +17,10 @@ public class Prosecution extends Application {
     public void start(Stage primaryStage) throws  Exception{
         Text text1 = new Text("The charges brought against Mr. Stamos are grand theft and deflammation of character. Bob Saget Claims that John Stamos has been saying that Bob Saget always stole stuff off the set of full House such as a lamp, a dining room table set, and a fat stack of cash that belonged to the olson twins. As for the theft Saget claims that Stamos stole the show. ");
         Button button = new Button ("Next");
-        button.setOnAction(new EventHandler<ActionEvent>() {
+        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                Application.launch();
+            public void handle(MouseEvent event) {
+
             }
         });
         Pane root = new Pane();
