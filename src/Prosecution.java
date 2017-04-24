@@ -15,12 +15,21 @@ public class Prosecution extends Application {
 
     public void start(Stage primaryStage) throws  Exception{
         Text text1 = new Text("The charges brought against Mr. Stamos are grand theft and deflammation of character. Bob Saget Claims that John Stamos has been saying that Bob Saget always stole stuff off the set of full House such as a lamp, a dining room table set, and a fat stack of cash that belonged to the olson twins. As for the theft Saget claims that Stamos stole the show. ");
-        Text text2 = new Text ("Judge: Mr. Saget, please tell me what it is you wish to gain from this case.");
+        Button button = new Button ("Next");
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Application.launch();
+            }
+        });
         Pane root = new Pane();
         root.getChildren().add(text1);
         text1.setLayoutX(10);
         text1.setLayoutY(450);
         text1.setWrappingWidth(600);
+        root.getChildren().add(button);
+        button.setLayoutY(470);
+        button.setLayoutX(700);
 
         primaryStage.setTitle("Prosecution");
         primaryStage.setScene(new Scene(root, 1000,500));
@@ -30,11 +39,13 @@ public class Prosecution extends Application {
     }
 
     public void second(Stage secondStage) throws Exception{
+        Text text2 = new Text ("Judge: Mr. Saget, please tell me what it is you wish to gain from this case.");
         Button choice1 = new Button("Restitution");
         Button choice2 = new Button("Jail");
         Button choice3 = new Button("IDK");
 
         Button choice4 = new Button("Objection!");
+
         /*choice4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -46,6 +57,10 @@ public class Prosecution extends Application {
             }
         });*/
         Pane root = new Pane();
+        root.getChildren().add(text2);
+        text2.setLayoutX(10);
+        text2.setLayoutY(450);
+        text2.setWrappingWidth(600);
         root.getChildren().add(choice1);
         choice1.setLayoutX(700);
         choice1.setLayoutY(470);
@@ -59,9 +74,9 @@ public class Prosecution extends Application {
         choice4.setLayoutX(900);
         choice4.setLayoutY(470);
         //Image back = new Image("courtroom.jpg");
-        primaryStage.setTitle("Prosecution");
-        primaryStage.setScene(new Scene(root, 1000,500));
-        primaryStage.show()
+        secondStage.setTitle("Prosecution");
+        secondStage.setScene(new Scene(root, 1000,500));
+        secondStage.show();
 
     }
 }
