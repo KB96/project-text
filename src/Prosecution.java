@@ -57,6 +57,7 @@ public class Prosecution extends Application {
         choice1.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                //testing code
                 System.out.println("I clicked Restitution");
             }
         });
@@ -64,6 +65,7 @@ public class Prosecution extends Application {
         choice2.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                //testing code
                 System.out.println("I clicked Jail");
             }
         });
@@ -71,6 +73,7 @@ public class Prosecution extends Application {
         choice3.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                //testing code
                 System.out.println("I clicked IDK");
             }
         });
