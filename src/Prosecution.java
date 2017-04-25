@@ -12,6 +12,8 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class Prosecution extends Application {
 
     public void start(Stage primaryStage) throws  Exception{
@@ -20,6 +22,12 @@ public class Prosecution extends Application {
         button.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                System.out.println("I clicked");
+                try {
+                    second(primaryStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
         });
@@ -35,8 +43,6 @@ public class Prosecution extends Application {
         primaryStage.setTitle("Prosecution");
         primaryStage.setScene(new Scene(root, 1000,500));
         primaryStage.show();
-
-
     }
 
     public void second(Stage secondStage) throws Exception{
@@ -47,16 +53,16 @@ public class Prosecution extends Application {
 
         Button choice4 = new Button("Objection!");
 
-        /*choice4.setOnAction(new EventHandler<ActionEvent>() {
+        choice4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Stage stage = new Stage();
                 stage.setTitle("Objection");
                 Image pheonix = new Image("Objections.png");
-                Scene objection = new Scene(pheonix,200,500);
+//                Scene objection = new Scene(pheonix,200,500);
                 System.out.println("");
             }
-        });*/
+        });
         Pane root = new Pane();
         root.getChildren().add(text2);
         text2.setLayoutX(10);
