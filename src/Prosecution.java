@@ -28,7 +28,7 @@ public class Prosecution extends Application {
             public void handle(MouseEvent event) {
 
                 //testing code
-                System.out.println("I clicked");
+                System.out.println("I clicked Next");
                 try {
                     second(primaryStage);
                 } catch (Exception e) {
@@ -52,11 +52,29 @@ public class Prosecution extends Application {
 
     public void second(Stage secondStage) throws Exception{
         Text text2 = new Text ("Judge: Mr. Saget, please tell me what it is you wish to gain from this case.");
-        Button choice1 = new Button("Restitution");
-        Button choice2 = new Button("Jail");
-        Button choice3 = new Button("IDK");
-        Button choice4 = new Button("Objection!");
 
+        Button choice1 = new Button("Restitution");
+        choice1.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println("I clicked Restitution");
+            }
+        });
+        Button choice2 = new Button("Jail");
+        choice2.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println("I clicked Jail");
+            }
+        });
+        Button choice3 = new Button("IDK");
+        choice3.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println("I clicked IDK");
+            }
+        });
+        Button choice4 = new Button("Objection!");
         choice4.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -71,7 +89,7 @@ public class Prosecution extends Application {
                 stage.setScene(scene);
                 stage.show();
                 //testing code
-                System.out.println("I clicked");
+                System.out.println("I clicked Objection");
             }
         });
         Pane root = new Pane();
