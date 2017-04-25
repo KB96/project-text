@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
@@ -17,18 +18,22 @@ import java.awt.*;
 public class Prosecution extends Application {
 
     public void start(Stage primaryStage) throws  Exception{
-        Text text1 = new Text("The charges brought against Mr. Stamos are grand theft and deflammation of character. Bob Saget Claims that John Stamos has been saying that Bob Saget always stole stuff off the set of full House such as a lamp, a dining room table set, and a fat stack of cash that belonged to the olson twins. As for the theft Saget claims that Stamos stole the show. ");
+        Text text1 = new Text("The charges brought against Mr. Stamos are grand theft and defamation of character." +
+                " Bob Saget Claims that John Stamos has been saying that Bob Saget always stole stuff off the set of" +
+                " Full House such as a lamp, a dining room table set, and a fat stack of cash that belonged to the " +
+                " Olson twins. As for the theft, Saget claims that Stamos stole the show. ");
         Button button = new Button ("Next");
         button.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+
+                //testing code
                 System.out.println("I clicked");
                 try {
                     second(primaryStage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         });
         Pane root = new Pane();
@@ -50,17 +55,23 @@ public class Prosecution extends Application {
         Button choice1 = new Button("Restitution");
         Button choice2 = new Button("Jail");
         Button choice3 = new Button("IDK");
-
         Button choice4 = new Button("Objection!");
 
-        choice4.setOnAction(new EventHandler<ActionEvent>() {
+        choice4.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
-            public void handle(ActionEvent event) {
+            public void handle(MouseEvent event) {
                 Stage stage = new Stage();
                 stage.setTitle("Objection");
                 Image pheonix = new Image("Objections.png");
-//                Scene objection = new Scene(pheonix,200,500);
-                System.out.println("");
+                ImageView imgView = new ImageView(pheonix);
+                StackPane sp = new StackPane();
+                sp.getChildren().add(imgView);
+
+                Scene scene = new Scene(sp);
+                stage.setScene(scene);
+                stage.show();
+                //testing code
+                System.out.println("I clicked");
             }
         });
         Pane root = new Pane();
