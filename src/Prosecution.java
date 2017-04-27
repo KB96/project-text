@@ -10,10 +10,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.File;
 
 public class Prosecution extends Application {
 
@@ -28,7 +31,7 @@ public class Prosecution extends Application {
             public void handle(MouseEvent event) {
 
                 //testing code
-                System.out.println("I clicked Next");
+                System.out.println("This is to test Next button");
                 try {
                     second(primaryStage);
                 } catch (Exception e) {
@@ -44,9 +47,16 @@ public class Prosecution extends Application {
         root.getChildren().add(button);
         button.setLayoutY(470);
         button.setLayoutX(700);
-
         primaryStage.setTitle("Prosecution");
         primaryStage.setScene(new Scene(root, 1000,500));
+        Image court = new Image("courtroom.jpg");
+        ImageView imgView = new ImageView(court);
+        root.getChildren().add(imgView);
+
+        //Image back = new Image("courtroom.jpg");
+
+
+
         primaryStage.show();
     }
 
@@ -58,7 +68,7 @@ public class Prosecution extends Application {
             @Override
             public void handle(MouseEvent event) {
                 //testing code
-                System.out.println("I clicked Restitution");
+                System.out.println("This is to test Restitution button");
             }
         });
         Button choice2 = new Button("Jail");
@@ -66,7 +76,7 @@ public class Prosecution extends Application {
             @Override
             public void handle(MouseEvent event) {
                 //testing code
-                System.out.println("I clicked Jail");
+                System.out.println("This is to test Jail button");
             }
         });
         Button choice3 = new Button("IDK");
@@ -74,7 +84,7 @@ public class Prosecution extends Application {
             @Override
             public void handle(MouseEvent event) {
                 //testing code
-                System.out.println("I clicked IDK");
+                System.out.println("This is to test IDK button");
             }
         });
         Button choice4 = new Button("Objection!");
@@ -92,7 +102,7 @@ public class Prosecution extends Application {
                 stage.setScene(scene);
                 stage.show();
                 //testing code
-                System.out.println("I clicked Objection");
+                System.out.println("This is to test Objection button");
             }
         });
         Pane root = new Pane();
@@ -112,9 +122,11 @@ public class Prosecution extends Application {
         root.getChildren().add(choice4);
         choice4.setLayoutX(900);
         choice4.setLayoutY(470);
-        //Image back = new Image("courtroom.jpg");
         secondStage.setTitle("Prosecution");
         secondStage.setScene(new Scene(root, 1000,500));
+        Image court = new Image("courtroom.jpg");
+        ImageView imgView = new ImageView(court);
+        root.getChildren().add(imgView);
         secondStage.show();
 
     }
