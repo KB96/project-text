@@ -51,12 +51,9 @@ public class Prosecution extends Application {
         primaryStage.setScene(new Scene(root, 1000,500));
         Image court = new Image("courtroom.jpg");
         ImageView imgView = new ImageView(court);
+//        imgView.setFitHeight(500);
+//        imgView.getFitWidth();
         root.getChildren().add(imgView);
-
-        //Image back = new Image("courtroom.jpg");
-
-
-
         primaryStage.show();
     }
 
